@@ -4,15 +4,47 @@
 
 # fbb-pdf-data-extraction
 
-This data extraction tool is designed to extract balance sheet information and profit & losses information from annual reports that are provided in PDF format. It is based on Jupyter Notebook and uses different approaches to achieve its goal. It uses MyMuPDF for when the textin the PDF files is accessible and uses OCR in case the text is not accessible (e.g. embedded in an image) and needs to be exted prior to processing it.
+This data extraction tool is designed to extract balance sheet information and profit & losses information from annual reports that are provided in PDF format. 
+It is based on Jupyter Notebook and can use different approaches to achieve its goal: 
+- directly accessing text in the PDF files, and
+- indirectly using OCR to recognize text in the PDF files prior to processing it.
 
 ## Installation
 
-Use the package manager [pip](https://pip.pypa.io/en/stable/) to install foobar.
+Use the package manager [pip](https://pip.pypa.io/en/stable/) to install:
+- openai
+- langdetect
+- pytesseract
+- pdf2image
+- Pillow
+- pandas
+- fitz
+- pytesseract
+- PIL
+- sklearn
+- numpy
 
 ```bash
 pip install foobar
 ```
+
+## Files Used
+
+- The script processes a specific PDF file that needs to be specified
+- The script uses an Excel sheet that contains the structure of the ledgers.
+- Finally the financial_ledger.py contains all the names of ledgers that can be found in the PDF and to which group the script will assign them.
+
+The General ledger structure is an Excel file that consist of the columns (exact):
+| Hoofd posten code: | Postencode | Balans/res.rek. indicatie: | Debit/credit indicatie: | Omschr. postencode |
+| ------------------ | ---------- | -------------------------- | ----------------------- | ------------------ |
+| 100 | 110 | B | D | Non-material Assets |
+| 100 | 120 | B | D | Material Assets |
+| 100 | 130 | B | D | Financial Assets |
+| 700 | 700 | R | D | Costs |
+| 700 | 710 | R | D | Revenue Costs |
+| 700 | 720 | R | D | Sales Costs |
+
+The first column contains the ledger group code, the second column specifies a sub-group, the third column specifies whether the data should be listed on the balance sheet (B) or the profit and losses account (R), column four indicates debit (D) or credit (C) and the last column contains the ledger name.
 
 ## Usage
 
