@@ -47,18 +47,8 @@ The first column contains the ledger group code, the second column specifies a s
 
 ## Usage
 
-```python
-import foobar
-
-# returns 'words'
-foobar.pluralize('word')
-
-# returns 'geese'
-foobar.pluralize('goose')
-
-# returns 'phenomenon'
-foobar.singularize('phenomena')
-```
+To use the script, just open the Jupyter Notebook file and execute the steps.
+There are different configurations one can test, so not all the packages need to be loaded.
 
 ## Contributing
 
