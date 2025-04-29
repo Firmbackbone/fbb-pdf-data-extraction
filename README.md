@@ -19,13 +19,12 @@ Use the package manager [pip](https://pip.pypa.io/en/stable/) to install:
 - Pillow
 - pandas
 - fitz
-- pytesseract
 - PIL
 - sklearn
 - numpy
 
 ```bash
-pip install foobar
+pip install openai langdetect pytesseract pdf2image Pillow pandas fitz PIL sklearn numpy
 ```
 
 ## Files Used
